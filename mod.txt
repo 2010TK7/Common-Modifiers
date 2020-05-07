@@ -3,7 +3,7 @@
 	"description": "Crime Spree Modifiers on standard gamemode.",
 	"author": "TK7"
 	"contact": "https://steamcommunity.com/id/2010TK7",
-	"version": "0.8.1",
+	"version": "0.8.3",
 	"blt_version": 2,
 	"updates": [
 		{"identifier": "TCM", "host": {"meta": "https://storage.live.com/items/8C3AB972E7E69B18!118?authkey=!AOZoHHpqnlDeZes"}}
