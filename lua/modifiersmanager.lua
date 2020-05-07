@@ -2,7 +2,10 @@ function ModifiersManager:modify_value(id, value, ...)
 	if CommonModifiers.Checker then
 		CommonModifiers:Load()
 		local new_value, override = CommonModifiers:modify_value(id, value, ...)
-		return (new_value ~= nil or override) and new_value or value
+		if new_value ~= nil or override then
+			value = new_value
+		end
+		return value
 	end
 
 	for _, category in pairs(self._modifiers) do

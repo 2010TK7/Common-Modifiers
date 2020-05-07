@@ -11,16 +11,16 @@ CommonModifiers.settings = CommonModifiers.settings or {
 
 	OM_shield_reflect = nil,
 	OM_cloaker_smoke = nil,
-	OM_medic_heal_1 = false,
-	OM_no_hurt = nil,
-	OM_taser_overcharge = false,
+	OM_medic_heal_1 = nil,
+	OM_no_hurt = false,
+	OM_taser_overcharge = nil,
 	OM_heavies = false,
 	OM_medic_1 = false,
 	OM_heavy_sniper = false,
 	OM_dozer_rage = false,
 	OM_cloaker_tear_gas = false,
 	OM_dozer_1 = false,
-	OM_medic_heal_2 = false,
+	OM_medic_heal_2 = nil,
 	OM_dozer_lmg = false,
 	OM_medic_adrenaline = false,
 	OM_shield_phalanx = false,
@@ -70,7 +70,7 @@ function CommonModifiers:modify_value(id, value, ...)
 			return value + (_CM.OM_conceal_1 and _CM.OM_conceal_2 and 6 or 3)
 		end
 	elseif id == "CopMovement:HurtType" then
-		if _CM.OM_no_hurt and table.contains(CommonModifiers.IgnoredHurtTypes, value) then
+		if _CM.OM_no_hurt and table.contains({"expl_hurt", "knock_down", "stagger", "heavy_hurt", "hurt", "light_hurt"}, value) then
 			return nil, true
 		end
 	elseif id == "PlayerStandart:_start_action_intimidate" then
@@ -363,13 +363,4 @@ CommonModifiers.heavy_units = {
 	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_heavy/ene_murkywater_heavy"),
 	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"),
 	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36")
-}
-
-CommonModifiers.IgnoredHurtTypes = {
-	"expl_hurt",
-	"knock_down",
-	"stagger",
-	"heavy_hurt",
-	"hurt",
-	"light_hurt"
 }

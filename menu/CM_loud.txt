@@ -8,20 +8,11 @@
 	[
 		{
 			"type": "toggle",
-			"id": "OM_medic_heal_1",
-			"title": "OM_medic_heal",
-			"description": "menu_cs_modifier_medic_speed",
+			"id": "OM_no_hurt",
+			"title": "OM_no_hurt",
+			"description": "menu_cs_modifier_no_hurt",
 			"callback": "CMCheck",
-			"value": "OM_medic_heal_1",
-			"default_value": false
-		},
-		{
-			"type": "toggle",
-			"id": "OM_taser_overcharge",
-			"title": "OM_taser_overcharge",
-			"description": "menu_cs_modifier_taser_overcharge",
-			"callback": "CMCheck",
-			"value": "OM_taser_overcharge",
+			"value": "OM_no_hurt",
 			"default_value": false
 		},
 		{
@@ -76,15 +67,6 @@
 			"description": "menu_cs_modifier_dozers",
 			"callback": "CMCheck",
 			"value": "OM_dozer_1",
-			"default_value": false
-		},
-		{
-			"type": "toggle",
-			"id": "OM_medic_heal_2",
-			"title": "OM_medic_heal",
-			"description": "menu_cs_modifier_medic_speed",
-			"callback": "CMCheck",
-			"value": "OM_medic_heal_2",
 			"default_value": false
 		},
 		{

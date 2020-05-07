@@ -13,8 +13,7 @@
 	"CM_civ_0_title": "Civs Alarm(0)",
 	"CM_civ_0_desc": "civilian die = alarm",
 
-	"OM_medic_heal": "Heal Speed(20)",
-	"OM_taser_overcharge": "Taser Overcharge(50)",
+	"OM_no_hurt": "No Hurt",
 	"OM_heavies": "Heavy SWATs",
 	"OM_medic": "More Medic",
 	"OM_heavy_sniper": "ZEAL Sniper Spawn",
