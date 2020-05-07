@@ -3,8 +3,11 @@
 	"description": "Crime Spree Modifiers on standard gamemode.",
 	"author": "TK7"
 	"contact": "https://steamcommunity.com/id/2010TK7",
-	"version": "0.8",
+	"version": "0.8.1",
 	"blt_version": 2,
+	"updates": [
+		{"identifier": "TCM", "host": {"meta": "https://storage.live.com/items/8C3AB972E7E69B18!118?authkey=!AOZoHHpqnlDeZes"}}
+	],
 	"hooks": [
 		{"hook_id": "lib/managers/menumanager", "script_path": "menumanager.lua"},
 		{"hook_id": "lib/managers/modifiersmanager", "script_path": "commonmodifiers.lua"},

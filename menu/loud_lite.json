@@ -192,7 +192,6 @@
 			"value": "dozer_medic",
 			"default_value": 2
 		},
-		/**/
 		{
 			"type": "multiple_choice",
 			"id": "assault_extender",

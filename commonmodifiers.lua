@@ -3,7 +3,7 @@ if _G[key] then return else _G[key] = true end
 
 _G.CommonModifiers = _G.CommonModifiers or {}
 CommonModifiers._path = ModPath
-CommonModifiers._data_path = SavePath .. 'Tmod/TCM.txt'
+CommonModifiers._data_path = SavePath .. 'Tmod_TCM.txt'
 CommonModifiers.settings = CommonModifiers.settings or {
 	shield_reflect = 2,
 	cloaker_smoke = 2,
