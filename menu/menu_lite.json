@@ -1,0 +1,24 @@
+{
+	"menu_id": "CM_menu",
+	"parent_menu_id": "blt_options",
+	"title": "CM_menu_title",
+	"description": "CM_menu_desc_lite",
+	"back_callback": "CMSave",
+	"items":
+	[
+		{
+			"type": "multiple_choice",
+			"id": "pro",
+			"title": "CM_pro_title",
+			"description": "CM_pro_desc",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_off",
+				"CM_on"
+			],
+			"value": "pro",
+			"default_value": 1
+		}
+	]
+}

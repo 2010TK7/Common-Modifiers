@@ -1,0 +1,374 @@
+{
+	"menu_id": "CM_loud",
+	"parent_menu_id": "CM_menu",
+	"title": "CM_loud",
+	"description": "none",
+	"back_callback": "CMSave",
+	"items":
+	[
+		{
+			"type": "multiple_choice",
+			"id": "shield_reflect",
+			"title": "shield_reflect",
+			"description": "menu_cs_modifier_shield_reflect",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_on",
+				"CM_off"
+			],
+			"value": "shield_reflect",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "cloaker_smoke",
+			"title": "cloaker_smoke",
+			"description": "menu_cs_modifier_cloaker_smoke",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_on",
+				"CM_off"
+			],
+			"value": "cloaker_smoke",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "medic_heal_2",
+			"title": "medic_heal_2",
+			"description": "menu_cs_modifier_medic_speed",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_40",
+				"CM_20",
+				"CM_off",
+				"CM_100"
+			],
+			"value": "medic_heal_2",
+			"default_value": 3
+		},
+		{
+			"type": "multiple_choice",
+			"id": "no_hurt",
+			"title": "no_hurt",
+			"description": "menu_cs_modifier_no_hurt",
+			"callback": "CMCheck",
+			"items":
+			[
+				"no_stagger",
+				"CM_off",
+				"no_anim"
+			],
+			"value": "no_hurt",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "taser_overcharge",
+			"title": "taser_overcharge",
+			"description": "menu_cs_modifier_taser_overcharge",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_50",
+				"CM_off",
+				"taser_down"
+			],
+			"value": "taser_overcharge",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "heavies",
+			"title": "heavies",
+			"description": "menu_cs_modifier_heavies",
+			"callback": "CMCheck",
+			"items":
+			[
+				"heavy_mixture",
+				"CM_off",
+				"heavy_normal"
+			],
+			"value": "heavies",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "medic_2",
+			"title": "medic_2",
+			"description": "menu_cs_modifier_medics",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM+4",
+				"CM+2",
+				"CM_off"
+			],
+			"value": "medic_2",
+			"default_value": 3
+		},
+		{
+			"type": "multiple_choice",
+			"id": "heavy_sniper",
+			"title": "heavy_sniper",
+			"description": "menu_cs_modifier_heavy_sniper",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_on",
+				"CM_off"
+			],
+			"value": "heavy_sniper",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "dozer_rage",
+			"title": "dozer_rage",
+			"description": "menu_cs_modifier_dozer_rage",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_100",
+				"CM_off"
+			],
+			"value": "dozer_rage",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "cloaker_tear_gas",
+			"title": "cloaker_tear_gas",
+			"description": "menu_cs_modifier_cloaker_tear_gas",
+			"callback": "CMCheck",
+			"items":
+			[
+				"gas_cs",
+				"gas_sm",
+				"CM_off"
+			],
+			"value": "cloaker_tear_gas",
+			"default_value": 3
+		},
+		{
+			"type": "multiple_choice",
+			"id": "dozer_2",
+			"title": "dozer_2",
+			"description": "menu_cs_modifier_dozers",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM+4",
+				"CM+2",
+				"CM_off"
+			],
+			"value": "dozer_2",
+			"default_value": 3
+		},
+		{
+			"type": "multiple_choice",
+			"id": "dozer_lmg",
+			"title": "dozer_lmg",
+			"description": "menu_cs_modifier_dozer_lmg",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_on",
+				"CM_off"
+			],
+			"value": "dozer_lmg",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "medic_adrenaline",
+			"title": "medic_adrenaline",
+			"description": "menu_cs_modifier_medic_adrenaline",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_100",
+				"CM_off"
+			],
+			"value": "medic_adrenaline",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "shield_phalanx",
+			"title": "shield_phalanx",
+			"description": "menu_cs_modifier_shield_phalanx",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_on",
+				"CM_off"
+			],
+			"value": "shield_phalanx",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "medic_deathwish",
+			"title": "medic_deathwish",
+			"description": "menu_cs_modifier_medic_deathwish",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_on",
+				"CM_off"
+			],
+			"value": "medic_deathwish",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "dozer_minigun",
+			"title": "dozer_minigun",
+			"description": "menu_cs_modifier_dozer_minigun",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_on",
+				"CM_off"
+			],
+			"value": "dozer_minigun",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "dozer_immunity",
+			"title": "dozer_immunity",
+			"description": "menu_cs_modifier_dozer_immune",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_on",
+				"CM_off"
+			],
+			"value": "dozer_immunity",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "dozer_medic",
+			"title": "dozer_medic",
+			"description": "menu_cs_modifier_dozer_medic",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_on",
+				"CM_off"
+			],
+			"value": "dozer_medic",
+			"default_value": 2
+		},
+		/**/
+		{
+			"type": "multiple_choice",
+			"id": "assault_extender",
+			"title": "assault_extender",
+			"description": "menu_cs_modifier_assault_extender",
+			"callback": "CMCheck",
+			"items":
+			[
+				"assault_cs",
+				"CM_off"
+			],
+			"value": "assault_extender",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "cloaker_arrest",
+			"title": "cloaker_arrest",
+			"description": "menu_cs_modifier_cloaker_arrest",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_on",
+				"CM_off"
+			],
+			"value": "cloaker_arrest",
+			"default_value": 2
+		},
+		{
+			"type": "multiple_choice",
+			"id": "medic_rage",
+			"title": "medic_rage",
+			"description": "menu_cs_modifier_medic_rage",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_20",
+				"CM_off"
+			],
+			"value": "medic_rage",
+			"default_value": 2
+		},
+		{
+			"type": "divider",
+			"size": 32
+		},
+		{
+			"type": "multiple_choice",
+			"id": "BlackDozer",
+			"title": "BlackDozer",
+			"description": "BlackDozer_desc",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_off",
+				"CM_on"
+			],
+			"value": "BlackDozer",
+			"default_value": 1
+		},
+		{
+			"type": "multiple_choice",
+			"id": "ShadowSpooc",
+			"title": "ShadowSpooc",
+			"description": "ShadowSpooc_desc",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_off",
+				"CM_on"
+			],
+			"value": "ShadowSpooc",
+			"default_value": 1
+		},
+		{
+			"type": "multiple_choice",
+			"id": "DiffIndex",
+			"title": "DiffIndex",
+			"description": "DiffIndex_desc",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_off",
+				"menu_difficulty_apocalypse",
+				"menu_difficulty_sm_wish"
+			],
+			"value": "DiffIndex",
+			"default_value": 1
+		},
+		{
+			"type": "multiple_choice",
+			"id": "ReCaptain",
+			"title": "ReCaptain",
+			"description": "ReCaptain_desc",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_off",
+				"CM_on"
+			],
+			"value": "ReCaptain",
+			"default_value": 1
+		}
+	]
+}

@@ -1,0 +1,61 @@
+{
+	"menu_id": "CM_stealth",
+	"parent_menu_id": "CM_menu",
+	"title": "CM_stealth",
+	"description": "none",
+	"back_callback": "CMSave",
+	"items":
+	[
+		{
+			"type": "multiple_choice",
+			"id": "pagers_4",
+			"title": "pagers_4",
+			"description": "menu_cs_modifier_pagers",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_4",
+				"CM_3",
+				"CM_2",
+				"CM_1",
+				"CM_off"
+			],
+			"value": "pagers_4",
+			"default_value": 5
+		},
+		{
+			"type": "multiple_choice",
+			"id": "civs_3",
+			"title": "civs_3",
+			"description": "menu_cs_modifier_civs",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_4",
+				"CM_7",
+				"CM_10",
+				"CM_off",
+				"CM_0"
+			],
+			"value": "civs_3",
+			"default_value": 4
+		},
+		{
+			"type": "multiple_choice",
+			"id": "conceal_2",
+			"title": "conceal_2",
+			"description": "menu_cs_modifier_concealment",
+			"callback": "CMCheck",
+			"items":
+			[
+				"CM_6",
+				"CM_3",
+				"CM_off",
+				"CM_18",
+				"CM_28"
+			],
+			"value": "conceal_2",
+			"default_value": 3
+		}
+	]
+}
