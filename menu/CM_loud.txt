@@ -8,6 +8,24 @@
 	[
 		{
 			"type": "toggle",
+			"id": "OM_medic_heal_1",
+			"title": "OM_medic_heal",
+			"description": "menu_cs_modifier_medic_speed",
+			"callback": "CMCheck",
+			"value": "OM_medic_heal_1",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_taser_overcharge",
+			"title": "OM_taser_overcharge",
+			"description": "menu_cs_modifier_taser_overcharge",
+			"callback": "CMCheck",
+			"value": "OM_taser_overcharge",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
 			"id": "OM_heavies",
 			"title": "OM_heavies",
 			"description": "menu_cs_modifier_heavies",
@@ -35,6 +53,15 @@
 		},
 		{
 			"type": "toggle",
+			"id": "OM_dozer_rage",
+			"title": "OM_dozer_rage",
+			"description": "menu_cs_modifier_dozer_rage",
+			"callback": "CMCheck",
+			"value": "OM_dozer_rage",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
 			"id": "OM_cloaker_tear_gas",
 			"title": "OM_cloaker_tear_gas",
 			"description": "menu_cs_modifier_cloaker_tear_gas",
@@ -53,11 +80,29 @@
 		},
 		{
 			"type": "toggle",
+			"id": "OM_medic_heal_2",
+			"title": "OM_medic_heal",
+			"description": "menu_cs_modifier_medic_speed",
+			"callback": "CMCheck",
+			"value": "OM_medic_heal_2",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
 			"id": "OM_dozer_lmg",
 			"title": "OM_dozer_lmg",
 			"description": "menu_cs_modifier_dozer_lmg",
 			"callback": "CMCheck",
 			"value": "OM_dozer_lmg",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_medic_adrenaline",
+			"title": "OM_medic_adrenaline",
+			"description": "menu_cs_modifier_medic_adrenaline",
+			"callback": "CMCheck",
+			"value": "OM_medic_adrenaline",
 			"default_value": false
 		},
 		{
@@ -80,15 +125,6 @@
 		},
 		{
 			"type": "toggle",
-			"id": "OM_medic_2",
-			"title": "OM_medic",
-			"description": "menu_cs_modifier_medics",
-			"callback": "CMCheck",
-			"value": "OM_medic_2",
-			"default_value": false
-		},
-		{
-			"type": "toggle",
 			"id": "OM_medic_deathwish",
 			"title": "OM_medic_deathwish",
 			"description": "menu_cs_modifier_medic_deathwish",
@@ -107,11 +143,29 @@
 		},
 		{
 			"type": "toggle",
+			"id": "OM_medic_2",
+			"title": "OM_medic",
+			"description": "menu_cs_modifier_medics",
+			"callback": "CMCheck",
+			"value": "OM_medic_2",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
 			"id": "OM_dozer_medic",
 			"title": "OM_dozer_medic",
 			"description": "menu_cs_modifier_dozer_medic",
 			"callback": "CMCheck",
 			"value": "OM_dozer_medic",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_assault_extender",
+			"title": "OM_assault_extender",
+			"description": "menu_cs_modifier_assault_extender",
+			"callback": "CMCheck",
+			"value": "OM_assault_extender",
 			"default_value": false
 		},
 		{

@@ -9,24 +9,37 @@ CommonModifiers.settings = CommonModifiers.settings or {
 	CM_UOheavies = false,
 	CM_civ_0 = false,
 
+	OM_shield_reflect = nil,
+	OM_cloaker_smoke = nil,
+	OM_medic_heal_1 = false,
+	OM_no_hurt = nil,
+	OM_taser_overcharge = false,
 	OM_heavies = false,
 	OM_medic_1 = false,
 	OM_heavy_sniper = false,
+	OM_dozer_rage = false,
 	OM_cloaker_tear_gas = false,
 	OM_dozer_1 = false,
+	OM_medic_heal_2 = false,
 	OM_dozer_lmg = false,
+	OM_medic_adrenaline = false,
 	OM_shield_phalanx = false,
 	OM_dozer_2 = false,
-	OM_medic_2 = false,
 	OM_medic_deathwish = false,
 	OM_dozer_minigun = false,
+	OM_medic_2 = false,
+	OM_dozer_immunity = nil,
 	OM_dozer_medic = false,
+	OM_assault_extender = false,
+	OM_cloaker_arrest = nil,
 	OM_medic_rage = false,
 
 	OM_pagers_1 = false,
 	OM_civs_1 = false,
+	OM_conceal_1 = nil,
 	OM_civs_2 = false,
 	OM_pagers_2 = false,
+	OM_conceal_2 = nil,
 	OM_pagers_3 = false,
 	OM_civs_3 = false,
 	OM_pagers_4 = false
@@ -35,13 +48,137 @@ CommonModifiers.settings = CommonModifiers.settings or {
 local _CM = CommonModifiers.settings
 
 function CommonModifiers:modify_value(id, value, ...)
-	if id == "GroupAIStateBesiege:SpawningUnit" then
-		if _CM.OM_heavy_sniper and table.contains(CommonModifiers.heavy_units, value)
- and math.random() < (5) * 0.01 then
+	if id == "PlayerMovement:OnSpooked" then
+		if _CM.OM_cloaker_arrest then
+			return "arrested"
+		end
+	elseif _CM.OM_assault_extender then
+		self._sustain_start_time = self._sustain_start_time or 0
+		self._base_duration = self._base_duration or 0
+		self._hostage_time = self._hostage_time or 0
+		self._hostage_count = self._hostage_count or 0
+		self._hostage_average_count = self._hostage_average_count or 0
+		self._hostage_last_update = self._hostage_last_update or 0
+		if id == "GroupAIStateBesiege:SustainEndTime" then
+			self:_update_hostage_time()
+			local now = TimerManager:game():time()
+			local extension = (50) * 0.01
+			local deduction = (4) * 0.01 * self._hostage_average_count
+			local value = value + self._base_duration * (extension - deduction)
+			return value
+		elseif id == "GroupAIStateBesiege:SustainSpawnAllowance" then
+			self:_update_hostage_time()
+			local now = TimerManager:game():time()
+			local base_pool = ...
+			local extension = (50) * 0.01
+			local deduction = (4) * 0.01 * self._hostage_average_count
+			local value = value + math.floor(base_pool * (extension - deduction))
+			return value
+		end
+	elseif id == "CopDamage:DamageExplosion" then
+		local unit_tweak = ...
+		if _CM.OM_dozer_immunity and unit_tweak == "tank" then
+			return 0
+		end
+	elseif id == "MedicDamage:CooldownTime" then
+		if _CM.OM_medic_heal_1 or _CM.OM_medic_heal_2 then
+			return value * self:get_cooldown_multiplier()
+		end
+	elseif id == "GroupAIStateBesiege:SpawningUnit" then
+		if _CM.OM_heavy_sniper and table.contains(CommonModifiers.heavy_units, value) and math.random() < (5) * 0.01 then
 			return Idstring("units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper")
+		end
+	elseif id == "BlackMarketManager:GetConcealment" then
+		if _CM.OM_conceal_1 or _CM.OM_conceal_2 then
+			return value + (_CM.OM_conceal_1 and _CM.OM_conceal_2 and 6 or 3)
+		end
+	elseif id == "CopMovement:HurtType" then
+		if _CM.OM_no_hurt and table.contains(CommonModifiers.IgnoredHurtTypes, value) then
+			return nil, true
+		end
+	elseif id == "PlayerStandart:_start_action_intimidate" then
+		local unit = ...
+		local unit_tweak = unit:base()._tweak_table
+		if _CM.OM_shield_phalnx and unit_tweak == "phalanx_minion" then
+			if unit:base().is_phalanx then
+				return
+			else
+				return "f31x_any"
+			end
+		end
+	elseif id == "FragGrenade:ShouldReflect" then
+		local hit_unit, unit = ...
+		local is_shield = hit_unit:in_slot(8)
+		if _CM.OM_shield_reflect and is_shield then
+			return true
+		end
+	elseif id == "PlayerTased:TasedTime" then
+		if _CM.OM_taser_overcharge then
+			value = value / ((50) * 0.01 + 1)
 		end
 	end
 	return value
+end
+
+function CommonModifiers:_update_hostage_time()
+	if not _CM.OM_assault_extender then
+		return
+	end
+
+	local now = TimerManager:game():time()
+	local diff = now - self._hostage_last_update
+	self._hostage_time = self._hostage_time + diff * self._hostage_count
+	self._hostage_average_count = self._hostage_time / (now - self._sustain_start_time)
+	self._hostage_last_update = now
+end
+
+function CommonModifiers:_update_hostage_count()
+	if not _CM.OM_assault_extender then
+		return
+	end
+
+	local num_hostages = managers.groupai:state():hostage_count()
+	local num_minions = managers.groupai:state():get_amount_enemies_converted_to_criminals()
+	self._hostage_count = math.min(num_hostages + num_minions, (8))
+end
+
+function CommonModifiers:OnHostageCountChanged()
+	if not _CM.OM_assault_extender then
+		return
+	end
+
+	self:_update_hostage_time()
+	self:_update_hostage_count()
+end
+
+function CommonModifiers:OnMinionAdded()
+	if not _CM.OM_assault_extender then
+		return
+	end
+
+	self:_update_hostage_time()
+	self:_update_hostage_count()
+end
+
+function CommonModifiers:OnMinionRemoved()
+	if not _CM.OM_assault_extender then
+		return
+	end
+
+	self:_update_hostage_time()
+	self:_update_hostage_count()
+end
+
+function CommonModifiers:OnEnterSustainPhase(duration)
+	if not _CM.OM_assault_extender then
+		return
+	end
+
+	local now = TimerManager:game():time()
+	self._sustain_start_time = now
+	self._base_duration = duration
+	self._hostage_time = 0
+	self._hostage_last_update = now
 end
 
 function CommonModifiers:OnCivilianKilled()
@@ -49,6 +186,13 @@ function CommonModifiers:OnCivilianKilled()
 	if (_CM.CM_civ_0 or _CM.OM_civs_1 or _CM.OM_civs_2 or _CM.OM_civs_3) and (_CM.CM_civ_0 and 0 or _CM.OM_civs_3 and 4 or _CM.OM_civs_2 and 7 or _CM.OM_civs_1 and 10) < self._body_count and not self._alarmed then
 		managers.groupai:state():on_police_called("civ_too_many_killed")
 		self._alarmed = true
+	end
+end
+
+function CommonModifiers:OnPlayerCloakerKicked(cloaker_unit)
+	local effect_func = MutatorCloakerEffect["effect_" .. tostring("smoke")]
+	if _CM.OM_cloaker_smoke and effect_func then
+		effect_func(self, cloaker_unit)
 	end
 end
 
@@ -82,7 +226,6 @@ function CommonModifiers:OnEnemyDied(unit, damage_info)
 
 	if _CM.OM_medic_rage then
 		local team_id = unit:brain()._logic_data.team and unit:brain()._logic_data.team.id or "law1"
-
 		if team_id ~= "law1" then
 			return
 		end
@@ -92,6 +235,24 @@ function CommonModifiers:OnEnemyDied(unit, damage_info)
 				enemy:base():add_buff("base_damage", (20) * 0.01)
 			end
 		end
+	end
+end
+
+function CommonModifiers:OnTankVisorShatter(unit, damage_info)
+	if _CM.OM_dozer_rage then
+		unit:base():add_buff("base_damage", (100) * 0.01)
+	end
+end
+
+function CommonModifiers:get_cooldown_multiplier()
+	if _CM.OM_medic_heal_1 or _CM.OM_medic_heal_2 then
+		return 1 - (_CM.OM_medic_heal_1 and _CM.OM_medic_heal_2 and 40 or 20) / 100
+	end
+end
+
+function CommonModifiers:OnEnemyHealed(medic, target)
+	if _CM.OM_medic_adrenaline then
+		target:base():add_buff("base_damage", (100) * 0.01)
 	end
 end
 
@@ -202,4 +363,13 @@ CommonModifiers.heavy_units = {
 	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_heavy/ene_murkywater_heavy"),
 	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"),
 	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36")
+}
+
+CommonModifiers.IgnoredHurtTypes = {
+	"expl_hurt",
+	"knock_down",
+	"stagger",
+	"heavy_hurt",
+	"hurt",
+	"light_hurt"
 }
