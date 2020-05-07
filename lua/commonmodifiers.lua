@@ -52,29 +52,6 @@ function CommonModifiers:modify_value(id, value, ...)
 		if _CM.OM_cloaker_arrest then
 			return "arrested"
 		end
-	elseif _CM.OM_assault_extender then
-		self._sustain_start_time = self._sustain_start_time or 0
-		self._base_duration = self._base_duration or 0
-		self._hostage_time = self._hostage_time or 0
-		self._hostage_count = self._hostage_count or 0
-		self._hostage_average_count = self._hostage_average_count or 0
-		self._hostage_last_update = self._hostage_last_update or 0
-		if id == "GroupAIStateBesiege:SustainEndTime" then
-			self:_update_hostage_time()
-			local now = TimerManager:game():time()
-			local extension = (50) * 0.01
-			local deduction = (4) * 0.01 * self._hostage_average_count
-			local value = value + self._base_duration * (extension - deduction)
-			return value
-		elseif id == "GroupAIStateBesiege:SustainSpawnAllowance" then
-			self:_update_hostage_time()
-			local now = TimerManager:game():time()
-			local base_pool = ...
-			local extension = (50) * 0.01
-			local deduction = (4) * 0.01 * self._hostage_average_count
-			local value = value + math.floor(base_pool * (extension - deduction))
-			return value
-		end
 	elseif id == "CopDamage:DamageExplosion" then
 		local unit_tweak = ...
 		if _CM.OM_dozer_immunity and unit_tweak == "tank" then
@@ -115,6 +92,29 @@ function CommonModifiers:modify_value(id, value, ...)
 	elseif id == "PlayerTased:TasedTime" then
 		if _CM.OM_taser_overcharge then
 			value = value / ((50) * 0.01 + 1)
+		end
+	elseif _CM.OM_assault_extender then
+		self._sustain_start_time = self._sustain_start_time or 0
+		self._base_duration = self._base_duration or 0
+		self._hostage_time = self._hostage_time or 0
+		self._hostage_count = self._hostage_count or 0
+		self._hostage_average_count = self._hostage_average_count or 0
+		self._hostage_last_update = self._hostage_last_update or 0
+		if id == "GroupAIStateBesiege:SustainEndTime" then
+			self:_update_hostage_time()
+			local now = TimerManager:game():time()
+			local extension = (50) * 0.01
+			local deduction = (4) * 0.01 * self._hostage_average_count
+			local value = value + self._base_duration * (extension - deduction)
+			return value
+		elseif id == "GroupAIStateBesiege:SustainSpawnAllowance" then
+			self:_update_hostage_time()
+			local now = TimerManager:game():time()
+			local base_pool = ...
+			local extension = (50) * 0.01
+			local deduction = (4) * 0.01 * self._hostage_average_count
+			local value = value + math.floor(base_pool * (extension - deduction))
+			return value
 		end
 	end
 	return value
