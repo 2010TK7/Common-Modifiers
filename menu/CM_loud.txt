@@ -1,0 +1,100 @@
+{
+	"menu_id": "CM_loud",
+	"parent_menu_id": "CM_menu",
+	"title": "CM_loud",
+	"description": "none",
+	"back_callback": "CMSave",
+	"items":
+	[
+		{
+			"type": "toggle",
+			"id": "OM_heavies",
+			"title": "OM_heavies",
+			"description": "menu_cs_modifier_heavies",
+			"callback": "CMCheck",
+			"value": "OM_heavies",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_medic_1",
+			"title": "OM_medic",
+			"description": "menu_cs_modifier_medics",
+			"callback": "CMCheck",
+			"value": "OM_medic_1",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_heavy_sniper",
+			"title": "OM_heavy_sniper",
+			"description": "menu_cs_modifier_heavy_sniper",
+			"callback": "CMCheck",
+			"value": "OM_heavy_sniper",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_dozer_1",
+			"title": "OM_dozer",
+			"description": "menu_cs_modifier_dozers",
+			"callback": "CMCheck",
+			"value": "OM_dozer_1",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_dozer_lmg",
+			"title": "OM_dozer_lmg",
+			"description": "menu_cs_modifier_dozer_lmg",
+			"callback": "CMCheck",
+			"value": "OM_dozer_lmg",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_shield_phalanx",
+			"title": "OM_shield_phalanx",
+			"description": "menu_cs_modifier_shield_phalanx",
+			"callback": "CMCheck",
+			"value": "OM_shield_phalanx",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_dozer_2",
+			"title": "OM_dozer",
+			"description": "menu_cs_modifier_dozers",
+			"callback": "CMCheck",
+			"value": "OM_dozer_2",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_medic_2",
+			"title": "OM_medic",
+			"description": "menu_cs_modifier_medics",
+			"callback": "CMCheck",
+			"value": "OM_medic_2",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_dozer_minigun",
+			"title": "OM_dozer_minigun",
+			"description": "menu_cs_modifier_dozer_minigun",
+			"callback": "CMCheck",
+			"value": "OM_dozer_minigun",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_dozer_medic",
+			"title": "OM_dozer_medic",
+			"description": "menu_cs_modifier_dozer_medic",
+			"callback": "CMCheck",
+			"value": "OM_dozer_medic",
+			"default_value": false
+		}
+	]
+}

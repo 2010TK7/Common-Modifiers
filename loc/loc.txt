@@ -1,0 +1,23 @@
+{
+	"CM_menu_title": "Common Modifiers",
+	"CM_menu_desc": "a few modifiers and no sync bug.",
+	"CM_custom": "Custom Modifiers",
+	"CM_loud": "Loud Modifiers",
+	"CM_stealth": "Stealth Modifiers",
+
+	"CM_BlackDozer_title": "BlackDozer Spawn",
+	"CM_BlackDozer_desc": "spawn Black Dozer on VH-.",
+	"CM_UOheavies_title": "UO Heavy SWATs",
+	"CM_UOheavies_desc": "you need install United Offensive to choose this.",
+
+	"OM_heavies": "Heavy SWATs",
+	"OM_medic": "More Medic",
+	"OM_heavy_sniper": "ZEAL Sniper Spawn",
+	"OM_dozer": "More Dozer",
+	"OM_dozer_lmg": "Skull Dozer",
+	"OM_shield_phalanx": "Phalanx Shield",
+	"OM_dozer_minigun": "Minigun Dozer",
+	"OM_dozer_medic": "Medic Dozer",
+
+	"OM_pagers": "Less Pagers"
+}

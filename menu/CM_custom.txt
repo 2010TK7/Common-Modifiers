@@ -1,0 +1,28 @@
+{
+	"menu_id": "CM_custom",
+	"parent_menu_id": "CM_menu",
+	"title": "CM_custom",
+	"description": "none",
+	"back_callback": "CMSave",
+	"items":
+	[
+		{
+			"type": "toggle",
+			"id": "CM_BlackDozer",
+			"title": "CM_BlackDozer_title",
+			"description": "CM_BlackDozer_desc",
+			"callback": "CMCheck",
+			"value": "CM_BlackDozer",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "CM_UOheavies",
+			"title": "CM_UOheavies_title",
+			"description": "CM_UOheavies_desc",
+			"callback": "CMCheck",
+			"value": "CM_UOheavies",
+			"default_value": false
+		}
+	]
+}

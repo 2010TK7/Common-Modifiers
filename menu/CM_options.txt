@@ -1,0 +1,10 @@
+{
+	"menu_id": "CM_menu",
+	"parent_menu_id": "blt_options",
+	"title": "CM_menu_title",
+	"description": "CM_menu_desc",
+	"back_callback": "CMSave",
+	"items":
+	[
+	]
+}
