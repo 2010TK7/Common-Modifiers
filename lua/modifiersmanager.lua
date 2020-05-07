@@ -1,5 +1,6 @@
 function ModifiersManager:modify_value(id, value, ...)
 	if CommonModifiers.Checker then
+		CommonModifiers:Load()
 		return CommonModifiers:modify_value(id, value, ...)
 	end
 
@@ -20,7 +21,10 @@ end
 
 function ModifiersManager:run_func(func_name, ...)
 	if CommonModifiers.Checker then
-		CommonModifiers:run_func(func_name, ...)
+		if CommonModifiers[func_name] then
+			CommonModifiers:Load()
+			CommonModifiers[func_name](CommonModifiers, ...)
+		end
 		return
 	end
 

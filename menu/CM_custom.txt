@@ -23,6 +23,15 @@
 			"callback": "CMCheck",
 			"value": "CM_UOheavies",
 			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "CM_civ_0",
+			"title": "CM_civ_0_title",
+			"description": "CM_civ_0_desc",
+			"callback": "CMCheck",
+			"value": "CM_civ_0",
+			"default_value": false
 		}
 	]
 }

@@ -9,7 +9,7 @@
 		{
 			"type": "toggle",
 			"id": "OM_pagers_1",
-			"title": "OM_pagers",
+			"title": "OM_pagers_1",
 			"description": "menu_cs_modifier_pagers",
 			"callback": "CMCheck",
 			"value": "OM_pagers_1",
@@ -17,8 +17,26 @@
 		},
 		{
 			"type": "toggle",
+			"id": "OM_civs_1",
+			"title": "OM_civs_1",
+			"description": "menu_cs_modifier_civs",
+			"callback": "CMCheck",
+			"value": "OM_civs_1",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_civs_2",
+			"title": "OM_civs_2",
+			"description": "menu_cs_modifier_civs",
+			"callback": "CMCheck",
+			"value": "OM_civs_2",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
 			"id": "OM_pagers_2",
-			"title": "OM_pagers",
+			"title": "OM_pagers_2",
 			"description": "menu_cs_modifier_pagers",
 			"callback": "CMCheck",
 			"value": "OM_pagers_2",
@@ -27,7 +45,7 @@
 		{
 			"type": "toggle",
 			"id": "OM_pagers_3",
-			"title": "OM_pagers",
+			"title": "OM_pagers_3",
 			"description": "menu_cs_modifier_pagers",
 			"callback": "CMCheck",
 			"value": "OM_pagers_3",
@@ -35,8 +53,17 @@
 		},
 		{
 			"type": "toggle",
+			"id": "OM_civs_3",
+			"title": "OM_civs_3",
+			"description": "menu_cs_modifier_civs",
+			"callback": "CMCheck",
+			"value": "OM_civs_3",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
 			"id": "OM_pagers_4",
-			"title": "OM_pagers",
+			"title": "OM_pagers_4",
 			"description": "menu_cs_modifier_pagers",
 			"callback": "CMCheck",
 			"value": "OM_pagers_4",

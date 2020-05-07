@@ -35,6 +35,15 @@
 		},
 		{
 			"type": "toggle",
+			"id": "OM_cloaker_tear_gas",
+			"title": "OM_cloaker_tear_gas",
+			"description": "menu_cs_modifier_cloaker_tear_gas",
+			"callback": "CMCheck",
+			"value": "OM_cloaker_tear_gas",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
 			"id": "OM_dozer_1",
 			"title": "OM_dozer",
 			"description": "menu_cs_modifier_dozers",
@@ -80,6 +89,15 @@
 		},
 		{
 			"type": "toggle",
+			"id": "OM_medic_deathwish",
+			"title": "OM_medic_deathwish",
+			"description": "menu_cs_modifier_medic_deathwish",
+			"callback": "CMCheck",
+			"value": "OM_medic_deathwish",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
 			"id": "OM_dozer_minigun",
 			"title": "OM_dozer_minigun",
 			"description": "menu_cs_modifier_dozer_minigun",
@@ -94,6 +112,15 @@
 			"description": "menu_cs_modifier_dozer_medic",
 			"callback": "CMCheck",
 			"value": "OM_dozer_medic",
+			"default_value": false
+		},
+		{
+			"type": "toggle",
+			"id": "OM_medic_rage",
+			"title": "OM_medic_rage",
+			"description": "menu_cs_modifier_medic_rage",
+			"callback": "CMCheck",
+			"value": "OM_medic_rage",
 			"default_value": false
 		}
 	]
